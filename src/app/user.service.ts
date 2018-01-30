@@ -6,8 +6,11 @@ import { User } from './user';
 @Injectable()
 export class UserService {
 
-  // private proxyUrl = 'http://node-proxy-josh-test.apps.employers.rht-labs.com/client';  // URL to web api
-  private proxyUrl = 'http://0.0.0.0:8080/client';  // URL to web api
+  // URL to OSE web api
+  private proxyUrl = 'http://node-proxy-josh-test.apps.employers.rht-labs.com/client';
+
+  // URL to LOCAL HOST web api
+  // private proxyUrl = 'http://0.0.0.0:8080/client';
 
   private httpOptions = {
     headers: new HttpHeaders({
