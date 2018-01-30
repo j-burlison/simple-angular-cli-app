@@ -6,17 +6,25 @@ import { User } from './user';
 @Injectable()
 export class UserService {
 
-  // URL to OSE web api
-  private proxyUrl = 'http://node-proxy-josh-test.apps.employers.rht-labs.com/client';
+  // URL to OSE Node Proxy
+  // private proxyUrl = 'http://node-proxy-josh-test.apps.employers.rht-labs.com/client';
 
-  // URL to LOCAL HOST web api
+  // URL to LOCAL HOST Node Proxy
   // private proxyUrl = 'http://0.0.0.0:8080/client';
 
-  private httpOptions = {
-    headers: new HttpHeaders({
-      'Access-Control-Allow-Origin':'*'
-    })
-  };
+  // Options for CORS calls (Hitting Node Proxy)
+  // private httpOptions = {
+  //   headers: new HttpHeaders({
+  //     'Access-Control-Allow-Origin':'*'
+  //   })
+  // };
+
+  // Options for non CORS calls (Hitting OSE Router Proxy)
+  private httpOptions = {};
+
+  // URL to OSE Router Proxy
+  private proxyUrl = 'api/client';
+
 
   constructor(private http: HttpClient) { }
 
